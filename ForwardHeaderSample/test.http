@@ -1,0 +1,7 @@
+### GET request to example server
+GET https://localhost:5001/.well-known/openid-configuration
+X-Forwarded-Host: yourdomain.com
+X-Forwarded-Proto: http
+X-Forwarded-For: 127.0.0.1
+
+###
