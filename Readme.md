@@ -46,6 +46,17 @@ forwarding scenario.
 
 2. Access the application at https://localhost:5001
 
+The `test.sh` command should result in the following output.
+
+```http
+HTTP/2 200 
+content-type: application/json; charset=UTF-8
+date: Wed, 28 May 2025 13:22:35 GMT
+server: Kestrel
+
+{"issuer":"http://yourdomain.com","jwks_uri":"http://yourdomain.com/.well-known/openid-configuration/jwks","authorization_endpoint":"http://yourdomain.com/connect/authorize","token_endpoint":"http://yourdomain.com/connect/token","userinfo_endpoint":"http://yourdomain.com/connect/userinfo","end_session_endpoint":"http://yourdomain.com/connect/endsession","check_session_iframe":"http://yourdomain.com/connect/checksession","revocation_endpoint":"http://yourdomain.com/connect/revocation","introspection_endpoint":"http://yourdomain.com/connect/introspect","device_authorization_endpoint":"http://yourdomain.com/connect/deviceauthorization","backchannel_authentication_endpoint":"http://yourdomain.com/connect/ciba","pushed_authorization_request_endpoint":"http://yourdomain.com/connect/par","require_pushed_authorization_requests":false,"frontchannel_logout_supported":true,"frontchannel_logout_session_supported":true,"backchannel_logout_supported":true,"backchannel_logout_session_supported":true,"scopes_supported":["openid","profile","scope1","scope2","offline_access"],"claims_supported":["sub","name","family_name","given_name","middle_name","nickname","preferred_username","profile","picture","website","gender","birthdate","zoneinfo","locale","updated_at"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","implicit","password","urn:ietf:params:oauth:grant-type:device_code","urn:openid:params:grant-type:ciba"],"response_types_supported":["code","token","id_token","id_token token","code id_token","code token","code id_token token"],"response_modes_supported":["form_post","query","fragment"],"token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post"],"id_token_signing_alg_values_supported":["RS256"],"subject_types_supported":["public"],"code_challenge_methods_supported":["plain","S256"],"request_parameter_supported":true,"request_object_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512","HS256","HS384","HS512"],"prompt_values_supported":["none","login","consent","select_account"],"authorization_response_iss_parameter_supported":true,"backchannel_token_delivery_modes_supported":["poll"],"backchannel_user_code_parameter_supported":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"]}%      
+```
+
 ## Security Considerations
 
 - Always specify trusted proxy IP addresses in production
